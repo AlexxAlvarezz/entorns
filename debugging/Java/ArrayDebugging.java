@@ -1,8 +1,7 @@
-
 public class ArrayDebugging {
 
-	public static void main(String[] args) {
-		  // Paso 1: Crear un array de 5 elementos
+    public static void main(String[] args) {
+        // Paso 1: Crear un array de 5 elementos
         int[] numbers = {1, 2, 3, 4, 5};
 
         // Mostrar el array original
@@ -14,14 +13,14 @@ public class ArrayDebugging {
 
         // Paso 2: Intentar modificar el array
         try {
-            System.out.println("\nAccediendo al elemento en el índice 5: " + numbers[5]);
+            System.out.println("\nAccediendo al elemento en el índice 4: " + numbers[4]); // Último índice válido
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("\nError: " + e.toString());
         }
 
         try {
             int sum = 0;
-            for (int i = 0; i <= numbers.length; i++) {  
+            for (int i = 0; i < numbers.length; i++) {  // Corregido: Usa < en lugar de <=
                 sum += numbers[i];
             }
             System.out.println("\nLa suma de los elementos es: " + sum);
@@ -32,7 +31,7 @@ public class ArrayDebugging {
         int[] reversedArray = new int[numbers.length];
         
         for (int i = 0; i < numbers.length; i++) {
-            reversedArray[i] = numbers[numbers.length - i]; 
+            reversedArray[i] = numbers[numbers.length - 1 - i]; // Corregido: Índice ajustado
         }
 
         // Mostrar el array invertido
@@ -41,6 +40,5 @@ public class ArrayDebugging {
             System.out.print(reversedArray[i] + " ");
         }
         System.out.println();
-	}
-
+    }
 }
