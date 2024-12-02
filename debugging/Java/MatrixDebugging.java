@@ -17,8 +17,7 @@ public class MatrixDebugging {
             System.out.println();
         }
 
-        // Paso 2: Intentar transponer la matriz
-        // Intento de transposición de la matriz
+        // Paso 2: Intentar girar la matriz 90 grados
         int[][] transposedMatrix = new int[matrix[0].length][matrix.length];
         
         for (int i = 0; i < matrix.length; i++) {
